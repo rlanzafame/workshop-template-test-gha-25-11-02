@@ -40,6 +40,25 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Add current date to myst.yml
+        shell: bash
+        run: |
+            BUILD_DATE="$(date +'%Y-%m-%d')"
+            sed -i "s|\${BUILD_DATE}|${BUILD_DATE}|g" myst.yml
+            echo "myst.yml:"
+            grep -nE '^\s*date:' myst.yml
+            
+      - name: Build PDF
+        run: |
+          jupyter book build --pdf
+
+      - name: Upload Output PDF as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Output PDF
+          path: exports/book.pdf
+          compression-level: 0
+
       - name: Build HTML
         run: jupyter book build --execute --html
         
