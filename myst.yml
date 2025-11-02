@@ -25,6 +25,8 @@ project:
     - https://github.com/TUD-JB-Templates/JB2_plugins/releases/download/experiment/experiment.mjs
 
   # exports and downloads
+  downloads:
+    - id: output-pdf
   exports:
     - format: typst
       template: https://github.com/myst-templates/plain_typst_book.git
