@@ -17,7 +17,7 @@ project:
     myst-guide: https://mystmd.org/guide
     jupyter: https://docs.jupyter.org/en/latest
 
-  date: 2025-11- # ${BUILD_DATE} 
+  date: 2025-10-01 # ${BUILD_DATE} 
   github: https://github.com/jupyter-book/workshop-template # Change this URL to your GitHub repository
   edit_url: 
   
@@ -25,8 +25,6 @@ project:
     - https://github.com/TUD-JB-Templates/JB2_plugins/releases/download/experiment/experiment.mjs
 
   # exports and downloads
-  downloads:
-    - id: output-pdf
   exports:
     - format: typst
       template: https://github.com/myst-templates/plain_typst_book.git
